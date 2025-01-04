@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>醫生開藥</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      margin: 0;
+      width: 20px;
+      height: 20px;
+    }
+
+    #other-input {
+      flex-grow: 1;
+      width: auto;
+      margin-left: 10px;
+      padding: 5px;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>醫生開藥</h1>
+  <form id="medication-form" action="#" method="POST">
+    <label for="case-number">病例編號</label>
+    <input type="text" id="case-number" name="case-number" placeholder="輸入病例編號" required>
+
+    <label for="patient-name">姓名</label>
+    <input type="text" id="patient-name" name="patient-name" placeholder="輸入病患的姓名" required>
+
+    <label for="medication-name">藥品名稱</label>
+    <input type="text" id="medication-name" name="medication-name" placeholder="輸入藥品名稱" required>
+
+    <label>劑量與用法</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="dosage" value="每日3次（每隔6小時 早、中、晚）"> 每日3次（每隔6小時 早、中、晚）</label>
+      <label><input type="checkbox" name="dosage" value="每日4次（三餐時間 + 睡前）"> 每日4次（三餐時間 + 睡前）</label>
+      <label><input type="checkbox" name="dosage" value="睡前"> 睡前</label>
+      <label><input type="checkbox" name="dosage" value="服用1包（粒）"> 服用1包（粒）</label>
+      <label><input type="checkbox" name="dosage" value="飯前"> 飯前</label>
+      <label><input type="checkbox" name="dosage" value="飯後"> 飯後</label>
+      <label><input type="checkbox" name="dosage" value="飯前/飯後 都可以"> 飯前/飯後 都可以</label>
+      <label style="align-items: center;">
+        <input type="checkbox" id="other-checkbox" name="dosage" value="其他">
+        其他
+        <input type="text" id="other-input" placeholder="請輸入其他用藥指示">
+      </label>
+    </div>
+
+    <label for="notes">備註</label>
+    <textarea id="notes" name="notes" rows="4" placeholder="輸入任何特別注意事項"></textarea>
+
+    <button type="submit">提交紀錄</button>
+  </form>
+</body>
+</html>
